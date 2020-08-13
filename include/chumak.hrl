@@ -21,10 +21,10 @@
                           curve_secretkey  | %% binary()
                           curve_serverkey  | %% binary()
                           curve_clientkeys.  %% [binary() | z85_key()]
-                          
+
 -type security_mechanism() :: null |
                               curve.
 
--define(SOCKET_OPTS(Opts), lists:append([binary, {active, false}, {reuseaddr, true}], Opts)).
+-define(SOCKET_OPTS(Opts), lists:append([binary, {active, false}, {reuseaddr, true}, {backlog, 8192}], Opts)).
 -define(GREETINGS_TIMEOUT, 1000).
 -define(RECONNECT_TIMEOUT, 2000).
